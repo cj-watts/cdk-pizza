@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.handler = void 0;
+const handler = async (event, context) => {
+    console.log("Event Info...", { event });
+    console.log({ context });
+    const { startDate, input, inputDetails, name, } = event;
+    return {
+        cause: "The order did not pass validations",
+        error: "Failed To Make Pizza",
+        input,
+        inputDetails,
+        name,
+        startDate,
+        status: "FAILED",
+        stopDate: new Date().getTime(),
+    };
+};
+exports.handler = handler;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoib3JkZXItZmFpbHVyZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm9yZGVyLWZhaWx1cmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBRU8sTUFBTSxPQUFPLEdBQUcsS0FBSyxFQUFFLEtBQVUsRUFBRSxPQUFnQixFQUFFLEVBQUU7SUFDMUQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxlQUFlLEVBQUUsRUFBRSxLQUFLLEVBQUUsQ0FBQyxDQUFDO0lBQ3hDLE9BQU8sQ0FBQyxHQUFHLENBQUMsRUFBRSxPQUFPLEVBQUUsQ0FBQyxDQUFDO0lBRXpCLE1BQU0sRUFDRixTQUFTLEVBQ1QsS0FBSyxFQUNMLFlBQVksRUFDWixJQUFJLEdBQ1AsR0FBRyxLQUFLLENBQUM7SUFDVixPQUFPO1FBQ0gsS0FBSyxFQUFFLG9DQUFvQztRQUMzQyxLQUFLLEVBQUUsc0JBQXNCO1FBQzdCLEtBQUs7UUFDTCxZQUFZO1FBQ1osSUFBSTtRQUNKLFNBQVM7UUFDVCxNQUFNLEVBQUUsUUFBUTtRQUNoQixRQUFRLEVBQUUsSUFBSSxJQUFJLEVBQUUsQ0FBQyxPQUFPLEVBQUU7S0FDakMsQ0FBQztBQUNOLENBQUMsQ0FBQztBQXBCVyxRQUFBLE9BQU8sV0FvQmxCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29udGV4dCB9IGZyb20gXCJhd3MtbGFtYmRhXCI7XG5cbmV4cG9ydCBjb25zdCBoYW5kbGVyID0gYXN5bmMgKGV2ZW50OiBhbnksIGNvbnRleHQ6IENvbnRleHQpID0+IHtcbiAgICBjb25zb2xlLmxvZyhcIkV2ZW50IEluZm8uLi5cIiwgeyBldmVudCB9KTtcbiAgICBjb25zb2xlLmxvZyh7IGNvbnRleHQgfSk7XG5cbiAgICBjb25zdCB7XG4gICAgICAgIHN0YXJ0RGF0ZSxcbiAgICAgICAgaW5wdXQsXG4gICAgICAgIGlucHV0RGV0YWlscyxcbiAgICAgICAgbmFtZSxcbiAgICB9ID0gZXZlbnQ7XG4gICAgcmV0dXJuIHtcbiAgICAgICAgY2F1c2U6IFwiVGhlIG9yZGVyIGRpZCBub3QgcGFzcyB2YWxpZGF0aW9uc1wiLFxuICAgICAgICBlcnJvcjogXCJGYWlsZWQgVG8gTWFrZSBQaXp6YVwiLFxuICAgICAgICBpbnB1dCxcbiAgICAgICAgaW5wdXREZXRhaWxzLFxuICAgICAgICBuYW1lLFxuICAgICAgICBzdGFydERhdGUsXG4gICAgICAgIHN0YXR1czogXCJGQUlMRURcIixcbiAgICAgICAgc3RvcERhdGU6IG5ldyBEYXRlKCkuZ2V0VGltZSgpLFxuICAgIH07XG59O1xuIl19

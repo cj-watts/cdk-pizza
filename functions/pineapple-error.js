@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.handler = void 0;
+const handler = async (event, context) => {
+    console.log("Event Info...", { event });
+    console.log({ context });
+    const { startDate, input, name, } = event;
+    return {
+        cause: "They asked for Pineapple",
+        error: "Failed To Make Pizza",
+        input,
+        name,
+        startDate,
+        status: "FAILED",
+        stopDate: new Date().getTime(),
+    };
+};
+exports.handler = handler;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGluZWFwcGxlLWVycm9yLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicGluZWFwcGxlLWVycm9yLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUVPLE1BQU0sT0FBTyxHQUFHLEtBQUssRUFBRSxLQUFVLEVBQUUsT0FBZ0IsRUFBRSxFQUFFO0lBQzFELE9BQU8sQ0FBQyxHQUFHLENBQUMsZUFBZSxFQUFFLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQztJQUN4QyxPQUFPLENBQUMsR0FBRyxDQUFDLEVBQUUsT0FBTyxFQUFFLENBQUMsQ0FBQztJQUV6QixNQUFNLEVBQ0YsU0FBUyxFQUNULEtBQUssRUFDTCxJQUFJLEdBQ1AsR0FBRyxLQUFLLENBQUM7SUFDVixPQUFPO1FBQ0gsS0FBSyxFQUFFLDBCQUEwQjtRQUNqQyxLQUFLLEVBQUUsc0JBQXNCO1FBQzdCLEtBQUs7UUFDTCxJQUFJO1FBQ0osU0FBUztRQUNULE1BQU0sRUFBRSxRQUFRO1FBQ2hCLFFBQVEsRUFBRSxJQUFJLElBQUksRUFBRSxDQUFDLE9BQU8sRUFBRTtLQUNqQyxDQUFDO0FBQ04sQ0FBQyxDQUFDO0FBbEJXLFFBQUEsT0FBTyxXQWtCbEIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb250ZXh0IH0gZnJvbSBcImF3cy1sYW1iZGFcIjtcblxuZXhwb3J0IGNvbnN0IGhhbmRsZXIgPSBhc3luYyAoZXZlbnQ6IGFueSwgY29udGV4dDogQ29udGV4dCkgPT4ge1xuICAgIGNvbnNvbGUubG9nKFwiRXZlbnQgSW5mby4uLlwiLCB7IGV2ZW50IH0pO1xuICAgIGNvbnNvbGUubG9nKHsgY29udGV4dCB9KTtcblxuICAgIGNvbnN0IHtcbiAgICAgICAgc3RhcnREYXRlLFxuICAgICAgICBpbnB1dCxcbiAgICAgICAgbmFtZSxcbiAgICB9ID0gZXZlbnQ7XG4gICAgcmV0dXJuIHtcbiAgICAgICAgY2F1c2U6IFwiVGhleSBhc2tlZCBmb3IgUGluZWFwcGxlXCIsXG4gICAgICAgIGVycm9yOiBcIkZhaWxlZCBUbyBNYWtlIFBpenphXCIsXG4gICAgICAgIGlucHV0LFxuICAgICAgICBuYW1lLFxuICAgICAgICBzdGFydERhdGUsXG4gICAgICAgIHN0YXR1czogXCJGQUlMRURcIixcbiAgICAgICAgc3RvcERhdGU6IG5ldyBEYXRlKCkuZ2V0VGltZSgpLFxuICAgIH07XG59O1xuIl19
