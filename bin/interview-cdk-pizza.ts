@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
 import { InterviewCdkPizzaStack } from '../lib/interview-cdk-pizza-stack';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const cdkDeploymentAccount = process.env.CDK_DEFAULT_ACCOUNT;
 const cdkDeploymentRegion = process.env.CDK_DEFAULT_REGION;

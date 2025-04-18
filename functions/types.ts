@@ -1,4 +1,10 @@
 export type BodyRequest = {
-    size: 'small' | 'medium' | 'large' | undefined,
-    toppings: string[];
+    name?: string;
+    pizzas: Pizza[];
 };
+
+type Pizza = {
+    name?: string;
+    size: 'small' | 'medium' | 'large' | undefined;
+    toppings: string[];
+}

@@ -1,8 +1,21 @@
 import {BodyRequest} from "./types";
 
 const calculatePrice = (event: BodyRequest): number => {
-    console.log(`faking price for now`);
-    return Math.floor(Math.random() * 100);
+    let price = 0;
+    for(let pizza of event.pizzas) {
+        switch(pizza.size) {
+            case "small":
+                price += 500;
+                break;
+            case "medium":
+                price += 1000;
+                break;
+            case "large":
+                price += 1500;
+        }
+        price += pizza.toppings.length * 150;
+    }
+    return price;
 }
 
 export const handler = async (event:any, context:any) => {

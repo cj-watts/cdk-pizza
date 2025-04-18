@@ -51,5 +51,11 @@
 
 7. Questions to answer - no code, just talk about what you would do:
    1. Where would you store orders if you had to store them somewhere?
-   2. What would you need to do to enable order lookups after the customer submitted a valid order
+      Some sort of database, which one would depend on other factors such as current software, other needed features,
+      and expected volume.  The main choices would be between a relational database and a NoSQL database.
+   2. What would you need to do to enable order lookups after the customer submitted a valid order?
+      I would need to set up some type of id such as phone number or order id that could be used to look up 
+      orders by.  This would be used to either get that specific order or all orders for that customer.
    3. How would you manage toppings inventory if you needed to? propose a simple example.
+      A simple solution would be a db table that keeps track of the toppings and how much is used for each pizza 
+      size so it can be deducted from what is on hand when the pizza is made.

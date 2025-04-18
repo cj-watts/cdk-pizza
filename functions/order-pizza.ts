@@ -1,38 +1,52 @@
 import { Context } from "aws-lambda";
 import {BodyRequest} from "./types";
-
+const BANNED_TOPPINGS = ["pineapple", "anchovies"];
 
 // Implement Step #1 - #4 here.
-const validateOrder = (body: BodyRequest): boolean => {
-    const {toppings = [], size } = body;
-
+export const validateOrder = (body: BodyRequest): boolean => {
     console.log(JSON.stringify(body));
-
-    if(!size || !toppings || !toppings.length) {
-        console.log(`size or toppings were missing.`);
+    const names: string[] = [];
+    if(!Array.isArray(body.pizzas) || !body.pizzas.length) {
+        console.log(`pizzas were missing.`);
         return true;
     }
+    for(let pizza of body.pizzas) {
 
-    if (size !== "small" && size !== "medium" && size !== "large") {
-        console.log(`size was not a valid value.`);
-        return true;
+        const {toppings = [], size} = pizza;
+
+        if (!size || !toppings || !Array.isArray(toppings) || !toppings.length) {
+            console.log(`size or toppings were missing.`);
+            return true;
+        }
+
+        if (size !== "small" && size !== "medium" && size !== "large") {
+            console.log(`size was not a valid value.`);
+            return true;
+        }
+        if(names.length && !pizza.name){
+            return true;
+        }
+        if(pizza.name) {
+            if(names.includes(pizza.name)) {return true;}
+            names.push(pizza.name);
+        }
+
     }
-
     return false;
 }
 
 const validateFlavor = (body: BodyRequest): boolean => {
-    const { toppings = [] } = body;
-
-    console.log(JSON.stringify(body));
-
-
-    if(toppings.length) {
-        return !!(toppings.find((topping) => topping === "pineapple"));
+    let hasBannedToppings = false;
+    for(let pizza of body.pizzas) {
+        if (pizza.toppings.length) {
+            hasBannedToppings = pizza.toppings.some((topping: string) => BANNED_TOPPINGS.includes(topping));
+        }
+        if(hasBannedToppings) {
+            break;
+        }
     }
 
-    //no toppings!
-    return false;
+    return hasBannedToppings;
 }
 
 /**
